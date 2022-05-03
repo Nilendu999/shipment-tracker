@@ -1,9 +1,62 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>FYP</title>
-    </head>
-    <body>
-        <h1>hello world</h1>
-    </body>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FYP</title>
+    <link rel="stylesheet" href="style/nav-style.css">
+    <link rel="stylesheet" href="style/index.css">
+</head>
+<body>
+    <div class="bg-image"></div>
+    <section class="navigation">
+        <div class="nav-container">
+          <div class="brand">
+            <a href="#!">Real-Time Tracking System</a>
+          </div>
+          <nav>
+            <div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+            <ul class="nav-list">
+              <li>
+                <a href="#!">Home</a>
+              </li>
+              <li>
+                <a href="#!">Info</a>
+              </li>
+              <li>
+                <a href="#!">Statistics</a>
+              </li>
+              <li>
+                <a href="#!">Overview</a>
+              </li>
+              <li>
+                <form id="form-nav" action="overview/overview.php" method="get">
+                    <input id="nav-input" type="text" name="trackID" placeholder="enter 8 digit tracking id" required="" autofocus="" />
+                    <button class="btn btn-lg btn-primary btn-block" type="submit">Track New Item</button>
+                </form>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </section>
+
+
+      <div class="wrapper">
+        <form class="form-signin" method="get" action="info/infopage.php">       
+          <h2 class="form-signin-heading">Track Existing Tracking ID</h2>
+          <input type="text" class="form-control" name="trackID" placeholder="enter 8 digit tracking id" required="" autofocus="" />
+          <button class="btn btn-lg btn-primary btn-block" type="submit" >Track</button>   
+        </form>
+      </div>
+      <div class="wrapper">
+        <form class="form-signin" method="get" action="utils/create-tab.php">       
+          <h2 class="form-signin-heading">Register New Tracking ID</h2>
+          <input type="text" id="register" class="form-control" name="trackID" placeholder="enter 8 digit tracking id" />
+          <button onclick="return confirm('Register New Tracking ID '.concat('  ',document.getElementById('register').value));" class="btn btn-lg btn-primary btn-block" type="submit" >Register</button>   
+        </form>
+      </div>
+
+
+      <script src="script/nav-script.js"></script>
+</body>
 </html>
